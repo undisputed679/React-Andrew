@@ -5,6 +5,7 @@ import Header from './Header'
 import Options from './Options'
 import VisiblityToggle from './VisiblityToggle'
 import React, { Component } from 'react'
+import OptionModal from './OptionModal'
 
 export class IndecisionApp extends Component {
   title = 'Indecision'
@@ -16,7 +17,8 @@ export class IndecisionApp extends Component {
     this.handleAddOption=this.handleAddOption.bind(this);
     this.handleDeleteOption=this.handleDeleteOption.bind(this);
     this.state={
-      options:[]
+      options:[],
+      selectedOption:undefined
       // using below we can see options and button will be abeled
         // options:['one', 'two', 'three']
     };
@@ -46,12 +48,25 @@ export class IndecisionApp extends Component {
     this.setState((prevState)=>({
       options:prevState.options.filter((option)=> optionToRemove!==option)
     }))
+  };
+  
+  handleClearSelectedOption(){
+    this.setState(()=>({selectedOption:undefined}))
+    console.log(' handle '+this.state.selectedOption);
+    
   }
-  handlePick(){
+
+  handlePick= () => {
     const randomnum=Math.floor(Math.random()*this.state.options.length)
     const option=this.state.options[randomnum];
-    alert(option)
-  }
+    // console.log("bahar se"+!!option);
+    this.setState(()=>({
+      ...this.state.selectedOption=option,
+      // ...console.log("i am " +this.state.selectedOption),
+      // ...console.log("just check "+this.state.selectedOption)
+    }));
+    // console.log("after state "+this.setState.selectedOption);
+  };
   handleAddOption(option){
     if(!option){
       return 'Enter valid value to add items'
@@ -86,6 +101,12 @@ export class IndecisionApp extends Component {
         />
         <Counter />
         <VisiblityToggle/>
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          handleClearSelectedOption={this.state.selectedOption=undefined}
+        />
+        {/* {console.log("handle "+this.state.selectedOption)} */}
+        {console.log("props wala "+ this.state.selectedOption)}
       </div>
     )
   }
