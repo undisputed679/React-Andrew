@@ -5,7 +5,7 @@ function Headerx() {
   return (
     <div>
       <header>
-        <h1>Expensify</h1>
+        <h1>Portfolio</h1>
         <NavLink
           to='/'
           style={({ isActive, isPending }) => {
@@ -14,37 +14,30 @@ function Headerx() {
             };
           }}
         >
-          DashBoard
+          Home
         </NavLink>
+        
         <NavLink
-          to='/create'
-          style={({ isActive, isPending }) => {
-            return {
-              color: isActive ? "green" : "blue",
-            };
-          }}
-        > CreateExpence
-        </NavLink>
-        {/* <NavLink
-          to='/edit'
+          to='/pfo'
           style={({ isActive, isPending }) => {
             return {
               color: isActive ? "green" : "blue",
             };
           }}
         >
-          EditExpence
-        </NavLink> */}
+          PortfolioPage
+        </NavLink>
         <NavLink
-          to='/help'
+          to='/contact'
           style={({ isActive, isPending }) => {
             return {
               color: isActive ? "green" : "blue",
             };
           }}
         >
-        help
+          Contact
         </NavLink>
+        
       </header>
     </div>
   )

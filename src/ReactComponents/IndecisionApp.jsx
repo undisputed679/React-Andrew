@@ -86,7 +86,7 @@ export class IndecisionApp extends Component {
   render() {
     return (
       <div>
-        <Header title={this.title} sub={this.subtitle} />
+        {/* <Header title={this.title} sub={this.subtitle} /> */}
         <Action 
         hasOptions={this.state.options.length>0}
         handlePick={this.handlePick}
@@ -99,14 +99,14 @@ export class IndecisionApp extends Component {
         <AddOption 
           handleAddOption={this.handleAddOption}
         />
-        <Counter />
-        <VisiblityToggle/>
+        {/* <Counter />
+        <VisiblityToggle/> */}
         <OptionModal
           selectedOption={this.state.selectedOption}
           handleClearSelectedOption={this.state.selectedOption=undefined}
         />
         {/* {console.log("handle "+this.state.selectedOption)} */}
-        {console.log("props wala "+ this.state.selectedOption)}
+        {/* {console.log("props wala "+ this.state.selectedOption)} */}
       </div>
     )
   }

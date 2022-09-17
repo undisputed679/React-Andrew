@@ -1,32 +1,28 @@
 import {  Route, Routes } from "react-router-dom";
-import AddExpencePage from "../Component/AddExpencePage";
-import EditExpence from "../Component/EditExpence";
-import ExpenceDashboardPage from "../Component/ExpenceDashboardPage";
 import Headerx from "../Component/Headerx";
-import Help from "../Component/Help";
 import NotFound from "../Component/NotFound";
-import "./AppRoutes.css"
-import { useParams } from "react-router-dom";
-
 import React from 'react'
+import HomePage from "../Component/HomePage";
+import ContactPage from "../Component/ContactPage";
+import PortfolioPage from "../Component/PortfolioPage";
+import ProtfolioItemPage from "../Component/ProtfolioItemPage";
 
-function AppRouter() {
-  const {id}=useParams();
+function PortRoutes() {
   return (
     <div>
        <Headerx/>
         <Routes>
-            <Route path="/" element={<ExpenceDashboardPage/>}/>
-            <Route path="/create" element={<AddExpencePage/>}/>
-            <Route path="/edit/:id" element={<EditExpence/>}/>
-            <Route path="/help" element={<Help/>}/>
+            <Route path="/" element={<HomePage/>}/>
+            <Route path="/contact" element={<ContactPage/>}/>
+            <Route path="/pitem/:id" element={<ProtfolioItemPage/>}/>
+            <Route path="/pfo" element={<PortfolioPage/>}/>
             <Route path="*" element={<NotFound/>}/>
         </Routes>
     </div>
   )
 }
 
-export default AppRouter
+export default PortRoutes
 
 
 // const Headerx=()=>(
