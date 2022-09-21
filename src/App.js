@@ -9,6 +9,7 @@ import DashboardApp from "./IndicisionApp/DashboardApp";
 import ArrayDestructuring from "./PlayGround/ArrayDestructuring";
 import Play2 from "./PlayGround/ObjectDestructuring";
 import Playingred from "./PlayGround/Playingred";
+import Reducers from "./PlayGround/Reducers";
 import IndecisionApp from "./ReactComponents/IndecisionApp";
 // import PortRoutes from "./PortFolio/Router/PortRoutes";
 
@@ -16,16 +17,10 @@ import IndecisionApp from "./ReactComponents/IndecisionApp";
 function App() {
   return (
     <div className="App">
-      {/* <Routes>
-        <Route path="/" element={<AppRouter/>} />
-      </Routes> */}
-      {/* <Playingred/> */}
-      {/* <Play2/> */}
-      {/* <AppRouter/> */}
-      {/* <PortRoutes/> */}
+      <Reducers/>
       {/* <ArrayDestructuring/> */}
-      <DashboardApp/>
-      {/* <IndecisionApp/> */}
+      {/* <DashboardApp/> */}
+
     </div>
   );
 }
